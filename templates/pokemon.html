@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h2 class="text-center">{{pokemon}}</h2>
+<div class="text-center">
+  <img src="{{img}}" alt="{{pokemon}}" class="img-fluid" />
+</div>
+<p class="text-center">{{info}}</p>
+<div class="text-center">
+  <div class="btn btn-primary">
+    <a href="/"><p class="text-white">Regresar</p></a>
+  </div>
+</div>
+{% endblock %}

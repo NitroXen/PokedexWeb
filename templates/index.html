@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block content %}
+
+<p id="title">
+  <img
+    src="https://img.icons8.com/?size=100&id=16460&format=png&color=000000"
+    alt="pokedex"
+  />
+</p>
+
+<div class="container text-center">
+  <div class="text-center">
+    <form action="/search" method="get">
+      <input
+        type="text"
+        name="q"
+        id="q"
+        class="form-control"
+        placeholder="Buscar pokemon por nombre"
+      />
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+  </div>
+  <br />
+  <br />
+
+  <div class="row row-cols-2">
+    {% for pokemon in pokemons %}
+
+    <a
+      href="/pokemon/{{pokemons.index(pokemon)+1}}"
+      class="col-md-4 col-xl-2"
+      id="pokemon"
+    >
+      <div class="pokemon">
+        <img
+          src="{{img[pokemons.index(pokemon)]}}"
+          class="img-fluid"
+          alt="{{pokemon}}"
+        />
+        <p class="text-black">{{pokemon}}</p>
+      </div>
+    </a>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
